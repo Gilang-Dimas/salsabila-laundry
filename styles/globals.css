@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+html,
+body {
+  padding: 0;
+  margin: 0;
+ 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  font-family: 'Roboto Slab', sans-serif;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+.btn-editpk {
+  background: #20b8cc;
+  color: #eff8f8;
+  border: none;
+  padding: 7px 13px;
+  margin: 6px 6px;
+  border-radius: .2rem;
+}
+.btn-editpk:hover{
+  background: #4dbb68;
+}
+.btn-hapuspk {
+  background: #Ff2f00;
+  color: #eff8f8;
+  border: none;
+  padding: 7px 13px;
+  margin: 6px 6px;
+  border-radius: .2rem;
+}
+.btn-hapuspk:hover {
+ background: #Ff0062
+}
+.btn-editpl {
+  background: #20b8cc;
+  color: #eff8f8;
+  border: none;
+  padding: 7px 13px;
+  margin: 6px 6px;
+  border-radius: .2rem;
+}
+.btn-editpl:hover{
+  background: #4dbb68;
+}
+.btn-hapuspl {
+  background: #Ff2f00;
+  color: #eff8f8;
+  border: none;
+  padding: 7px 13px;
+  margin: 6px 6px;
+  border-radius: .2rem;
+}
+.btn-hapuspl:hover {
+  background: #Ff0062;
+}
+.btn-editpm {
+  background: #20b8cc;
+  color: #eff8f8;
+  border: none;
+  padding: 7px 13px;
+  margin: 6px 6px;
+  border-radius: .2rem;
+}
+.btn-editpm:hover{
+  background: #4dbb68;
+}
+.btn-hapuspm {
+  background: #Ff2f00;
+  color: #eff8f8;
+  border: none;
+  padding: 7px 13px;
+  margin: 6px 6px;
+  border-radius: .2rem;
+}
+.btn-hapuspm:hover {
+  background: #Ff0062;
+}
+@import url(./dashboard.css);
