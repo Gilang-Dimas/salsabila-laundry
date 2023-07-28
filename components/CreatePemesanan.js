@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Router from "next/router";
 import { useDataPelanggan, useDataPaket } from "../lib/swr.fetch";
+import axios from "axios";
 
 const Createpemesanan = () => {
   const [nama, setNama] = useState("");
@@ -10,6 +11,7 @@ const Createpemesanan = () => {
   const [jenis_paket, setJenis_paket] = useState("");
   const [berat_baju, setBerat_baju] = useState("");
   const [harga, setHarga] = useState("");
+  const [testpaket, setTestPaket] = useState([]);
   const [data_masuk, setData_masuk] = useState("");
   const [data_selesai, setData_selesai] = useState("");
   const [tgl_pengambilan, setTgl_pengambilan] = useState("");
@@ -56,6 +58,9 @@ const Createpemesanan = () => {
 
   function datapaketId(id_paket) {
     setJenis_paket(id_paket);
+    var pkt = axios
+      .get(`http://localhost:3000/api/paketbyId?id=${id_paket}`)
+      .then((response) => setTestPaket(response.data.data));
   }
   return (
     <div>
@@ -150,7 +155,7 @@ const Createpemesanan = () => {
                 id="harga"
                 type="text"
                 placeholder="Harga"
-                value={harga}
+                value={testpaket.map((v) => v.harga_paket)}
                 onChange={(e) => setHarga(e.target.value)}
               />
               <label htmlFor="harga">Harga</label>

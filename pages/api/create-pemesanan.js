@@ -12,13 +12,12 @@ const handler = async (req, res) => {
     tgl_pengambilan,
     status_transaksi,
   } = req.body;
+
   try {
     if (
       !nama ||
-      !no_telp ||
       !jenis_paket ||
       !berat_baju ||
-      !harga ||
       !data_masuk ||
       !data_selesai ||
       !tgl_pengambilan ||
@@ -28,14 +27,12 @@ const handler = async (req, res) => {
     }
     const results = await db.query(
       `
-            INSERT INTO data_pemesanan (nama, no_telp, jenis_paket, berat_baju, harga, data_masuk, data_selesai, tgl_pengambilan, status_transaksi)
-            VALUES (?,?,?,?,?,?,?,?,?)`,
+            INSERT INTO data_pemesanan (id_pelanggan, id_paket, berat_baju,  data_masuk, data_selesai, tgl_pengambilan, status_transaksi)
+            VALUES (?,?,?,?,?,?,?)`,
       [
         nama,
-        no_telp,
         jenis_paket,
         berat_baju,
-        harga,
         data_masuk,
         data_selesai,
         tgl_pengambilan,
